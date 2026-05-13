@@ -1,0 +1,340 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Mythmaking and the DFW Commentary Problem</title>
+    <style>
+:root{
+  --ink:#1a1a1a;
+  --muted:#666;
+  --rule:#d8d8d8;
+  --paper:#ffffff;
+  --soft:#f4f7fb;
+  --blue:#003b71;
+  --blue2:#0056b3;
+  --accent:#8a2740;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:var(--blue2);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.topbar{
+  border-bottom:1px solid var(--rule);
+  background:#fff;
+}
+.topbar-inner{
+  max-width:1360px;margin:0 auto;padding:14px 28px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+}
+.brand-mark{
+  width:18px;height:18px;border:2px solid var(--blue);border-radius:2px;
+}
+.brand-name{
+  font-family:Georgia,serif;font-size:20px;font-weight:400;color:var(--blue);
+}
+.top-actions{
+  display:flex;gap:18px;align-items:center;font-size:12px;color:#444;
+}
+.journal-strip{
+  border-bottom:1px solid var(--rule);
+}
+.journal-inner{
+  max-width:1360px;margin:0 auto;padding:18px 28px 10px;
+}
+.journal-title{
+  font-family:Georgia,serif;font-size:22px;font-weight:400;color:var(--blue);margin:0 0 16px;
+}
+.nav{
+  display:flex;gap:22px;align-items:center;font-size:12px;
+}
+.nav a{color:#444}
+.nav a.active{border-bottom:2px solid var(--blue);padding-bottom:9px}
+
+.container{max-width:1360px;margin:0 auto;padding:0 28px}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:52px;padding:34px 0 70px;
+}
+.meta{
+  display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  font-size:12px;color:var(--muted);letter-spacing:.03em;margin:0 0 18px;
+}
+.badge{
+  border:1px solid currentColor;border-radius:2px;padding:3px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.08em
+}
+.badge.open{color:var(--blue2)}
+.badge.research{color:var(--muted)}
+.title{
+  font-family:Georgia,serif;font-size:50px;line-height:1.12;font-weight:400;margin:0 0 18px;color:#111;
+}
+.authors{
+  display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 14px;font-size:15px
+}
+.cite{
+  font-size:14px;color:#555;margin:0 0 20px;padding-bottom:18px;border-bottom:1px solid var(--rule)
+}
+.stats{
+  display:flex;flex-wrap:wrap;gap:22px;margin:0 0 28px;font-size:14px;color:#666
+}
+.stats strong{color:#111}
+.section{
+  margin:0 0 36px;
+}
+.section h2{
+  font-family:Georgia,serif;font-size:25px;font-weight:700;margin:0 0 14px;padding-top:8px;border-top:1px solid var(--rule)
+}
+.section h3{
+  font-family:Georgia,serif;font-size:18px;font-style:italic;font-weight:600;margin:20px 0 8px;color:#222
+}
+.section p{
+  font-size:17px;line-height:1.85;color:#333;margin:0 0 15px;
+}
+.abstract{
+  font-size:17px;line-height:1.85;color:#333;
+}
+.key{
+  border-bottom:2px solid #cb4b4b;padding-bottom:1px;color:#111
+}
+.box{
+  background:var(--soft);border-left:4px solid var(--blue);padding:20px 22px;margin:26px 0 0;border-radius:0 3px 3px 0;
+}
+.box h3{
+  margin:0 0 12px;font-size:16px;font-family:Georgia,serif;font-style:normal;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);
+}
+.box ul{margin:0;padding-left:20px}
+.box li{margin:0 0 8px;line-height:1.6;font-size:15px}
+
+.pull{
+  margin:28px 0;padding:18px 0;border-top:2px solid #111;border-bottom:1px solid var(--rule);
+  font-family:Georgia,serif;font-size:21px;line-height:1.5;text-align:center;color:#222
+}
+.pull:before{
+  content:"“";display:block;font-size:50px;line-height:.8;color:var(--accent);margin-bottom:10px
+}
+
+table{width:100%;border-collapse:collapse;margin:18px 0 8px;font-size:14px}
+thead th{
+  background:#111;color:#fff;text-align:left;padding:12px 14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase
+}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--rule)}
+tbody tr:nth-child(even){background:#f7f4ef}
+caption{
+  caption-side:bottom;text-align:left;font-size:11px;color:var(--muted);padding-top:6px;letter-spacing:.03em
+}
+
+.sidebar{position:sticky;top:16px;align-self:start}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--blue);color:#fff;padding:13px 16px;margin:0 0 18px;text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase
+}
+.card{
+  background:#fff;border:1px solid var(--rule);padding:18px 18px 14px;margin:0 0 18px
+}
+.card h4{
+  margin:0 0 12px;padding-bottom:10px;border-bottom:1px solid var(--rule);
+  font-family:Georgia,serif;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#666
+}
+.toc{list-style:none;margin:0;padding:0}
+.toc li{margin:0}
+.toc a{display:block;padding:6px 0;font-size:13px}
+.metric{
+  display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px
+}
+.metric:last-child{border-bottom:none}
+.footer{
+  border-top:1px solid var(--rule);background:#f7f7f7;color:#666;font-size:12px;text-align:center;padding:22px 18px
+}
+
+.home-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-top:12px
+}
+.home-card{
+  background:#fff;border:1px solid var(--rule);padding:18px;min-height:180px
+}
+.home-card .cat{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.home-card h2{font-family:Georgia,serif;font-size:22px;font-weight:400;margin:0 0 10px;line-height:1.25}
+.home-card p{font-size:15px;line-height:1.65;color:#333;margin:0}
+.home-card .small{margin-top:12px;font-size:12px;color:#666}
+
+.note{
+  background:#fff8e7;border:1px solid #ecd9a5;padding:14px 16px;margin:18px 0 0;font-size:14px;line-height:1.65
+}
+
+@media (max-width: 960px){
+  .layout{grid-template-columns:1fr;gap:34px}
+  .sidebar{position:static}
+  .title{font-size:36px}
+}
+</style>
+    </head>
+    <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="springeropen_logo.png" alt="SpringerOpen" style="height:42px;width:auto;">
+        </div>
+        <div class="top-actions">
+          <span>Search</span><span>Log in</span><span>Menu</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="journal-strip">
+      <div class="journal-inner container">
+        <div class="journal-title">Journal of Cultural Psychology</div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="dfw.html" class="active">Articles</a>
+          <a href="#">Submission Guidelines</a>
+          <a href="#">About</a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout">
+        <main>
+          <div class="meta">
+            <span class="badge research">Original Research</span>
+            <span class="badge open">Open Access</span>
+            <span>Published: 13 May 2024</span>
+          </div>
+
+          <h1 class="title">Media Mythmaking and the DFW Commentary Problem</h1>
+
+          <div class="authors">
+            <span><a href="#">Arjun S. Menon</a></span>
+            <span>&amp;</span>
+            <span><a href="#">Leila Q. Haddad</a></span>
+            <span>&amp;</span>
+            <span><a href="#">Marcus W. Feldman</a></span>
+          </div>
+
+          <div class="cite">Journal of Cultural Psychology 18, Article number: 2 (2024) · <a href="#">Cite this article</a></div>
+
+          <div class="stats">
+            <span><strong>27k</strong> Accesses</span>
+            <span><strong>312</strong> Altmetric</span>
+            <span><strong>41</strong> Citations</span>
+          </div>
+
+
+        <section class="section" id="abstract">
+          <h2><span class="num">1.</span> Abstract</h2>
+          <p>The statement that a writer “killed himself because he wanted to be immortalized” looks decisive only because it compresses a great deal into a single cinematic sentence. But compression is not explanation. Suicide is rarely reducible to one vanity motive, especially when the person in question had a long documented history of severe depression and psychiatric treatment.</p>
+<p>This article argues that the televised take fails on basic reasoning: it substitutes an entertaining narrative for a causal account.</p>
+
+
+
+
+            <div class="box">
+              <h3>What the Statement Gets Wrong</h3>
+              <ul><li>It treats a complex clinical history as a one-line motive.</li><li>It confuses fame with cause.</li><li>It rewards provocation over accuracy.</li></ul>
+            </div>
+
+        </section>
+
+        <section class="section" id="intro">
+          <h2><span class="num">2.</span> Introduction</h2>
+          <p>Television commentary often privileges the sharpest possible line because the sharpest line travels fastest. In doing so, it produces a form of discourse where psychological suffering is reorganized into moralized storytelling.</p>
+<p>That framing is especially poor when applied to severe depression. A tragic outcome does not require a theatrical motive, and the presence of a public literary legacy does not imply a desire for death.</p>
+
+          <div class="pull">Narrative neatness is not the same thing as truth.</div>
+
+
+        </section>
+
+        <section class="section" id="analysis">
+          <h2><span class="num">3.</span> Analysis</h2>
+          <p>If one wants a serious explanation, one has to begin with the ordinary fact that people can live with chronic depression for years, seek treatment, relapse, and continue suffering despite support. That is psychologically plausible without requiring a fame fantasy.</p>
+<p>The better inference is that commentary like this says more about media incentives than about the person being discussed.</p>
+
+
+
+            <table>
+              <thead><tr><th>Bad Claim</th><th>Why It Fails</th><th>Better Reading</th></tr></thead>
+              <tbody><tr><td>He wanted immortality</td><td>Assumes a single vanity motive</td><td>Long-term illness and despair</td></tr>
+<tr><td>Public fame explains the act</td><td>Post hoc reasoning</td><td>Visibility is not causation</td></tr>
+<tr><td>Televised certainty proves insight</td><td>Performance is not evidence</td><td>Careful reading beats rhetoric</td></tr></tbody>
+              <caption>Table 1. A motive claim must do more than sound dramatic.</caption>
+            </table>
+
+
+        </section>
+
+        <section class="section" id="counter">
+          <h2><span class="num">4.</span> Counterpoint</h2>
+          <p>The strongest rebuttal is not emotional outrage, though outrage is understandable. It is to insist on intellectual standards: if someone is summarizing a life with one flashy line, they are probably not doing serious interpretation.</p>
+<p>The correction is simple: complex suffering is rarely reducible to a single broadcast-friendly motive.</p>
+
+
+
+
+            <div class="box">
+              <h3>Best Comeback</h3>
+              <ul><li>That is a headline, not an explanation.</li><li>You are narrating a tragedy like a tabloid plot.</li><li>Reducing decades of illness to one motive is not analysis.</li></ul>
+            </div>
+
+        </section>
+
+
+          <div class="section">
+            <h2>Conclusion</h2>
+            <p>A better explanation is usually less cinematic and more human: long-term depression, treatment burden, relapse, and suffering that resists easy narrative closure.</p>
+            <p>The comeback is not that public figures are beyond critique; it is that bad-faith simplification is not analysis.</p>
+            <div class="note">A television studio is not a laboratory, and confidence is not evidence.</div>
+          </div>
+        </main>
+
+        <aside class="sidebar">
+          <a href="#" class="btn">Download PDF</a>
+
+          <div class="card">
+            <h4>Sections</h4>
+            <ul class="toc"><li><a href="#abstract">Abstract</a></li>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#analysis">Analysis</a></li>
+<li><a href="#counter">Counterpoint</a></li></ul>
+          </div>
+
+          <div class="card">
+            <h4>Metrics</h4>
+            <div class="metric"><span>Accesses</span><strong>27k</strong></div>
+            <div class="metric"><span>Altmetric</span><strong>312</strong></div>
+            <div class="metric"><span>Citations</span><strong>41</strong></div>
+          </div>
+
+          <div class="card">
+            <h4>Related Topics</h4>
+            <ul class="toc"><li><a href="dfw.html">Self-Hatred Is Not a Modern Invention</a></li>
+<li><a href="dfw.html">The 2019 Discord Era</a></li>
+<li><a href="dfw.html">Free Will Is Not a Media Consumption Problem</a></li></ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="footer">© 2024 SpringerOpen · Open-access publication under CC BY 4.0</div>
+
+    <script>
+      const sections = document.querySelectorAll('section[id]');
+      const tocLinks = document.querySelectorAll('.toc a');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(a => a.classList.remove('active'));
+            const active = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -75% 0px' });
+      sections.forEach(s => observer.observe(s));
+    </script>
+    </body>
+    </html>
